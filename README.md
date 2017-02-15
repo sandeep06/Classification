@@ -13,4 +13,4 @@ inputText can be provide in TestClassifier.java to execute the program.
 
 Note: 
 uncomment  trainClassifier.train() method in TestClassifier.java  to train classifier first time.
-Later can be commented for testing QuestionCategory(as shown in TestClassifier.java-line.No-163).
+Later can be commented for testing QuestionCategory(as shown in TestClassifier.java-line.No-10).
