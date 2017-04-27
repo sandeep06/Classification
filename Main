@@ -1,0 +1,38 @@
+
+package com.test.document.parser;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+/**
+ *
+ * @author Sandeep
+ */
+public class Main {
+    
+    /**
+     * Main method
+     * @param args
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    public static void main(String args[]) throws FileNotFoundException, IOException
+    {
+        DocumentParser dp = new DocumentParser();
+        dp.parseFiles("C:/Users/386092/Downloads/poems/poem/");
+        //dp.parseFiles("D:/TestData");
+        dp.tfIdfCalculator(); //calculates tfidf
+        Map<Integer, Integer> map=  dp.getCosineSimilarity(); //calculated cosine similarity  
+          Iterator<Entry<Integer, Integer>> entries=map.entrySet().iterator();
+          while (entries.hasNext()) {
+              Entry thisEntry = (Entry) entries.next();
+              Object key = thisEntry.getKey();
+              Object value = thisEntry.getValue();
+              System.out.println("File:"+key+"&"+value);
+            }
+          
+    }
+}
